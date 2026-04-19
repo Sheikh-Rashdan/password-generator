@@ -1,0 +1,107 @@
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.container {
+  background-color: var(--container);
+  border: 3px solid var(--border);
+  border-bottom-width: 5px;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.column p {
+  text-align: center;
+}
+
+.spaced {
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.password {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+}
+
+button {
+  font-size: 1.2rem;
+  background-color: rgba(from var(--primary) r g b / 0.3);
+  border: 3px solid var(--primary);
+  border-radius: 1rem;
+  corner-shape: squircle;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.iconButton {
+  padding: 0.1rem;
+  padding-bottom: 0.2rem;
+}
+
+.textButton {
+  padding: 0.3rem;
+  margin: 0 2rem;
+}
+
+button:hover {
+  background-color: rgba(from var(--primary) r g b / 0.4);
+}
+
+Button:active {
+  transform: translateY(-0.2rem);
+}
+
+button.clipboard {
+  position: relative;
+}
+
+button.clipboard::after {
+  content: "Copied!";
+  font-size: 1rem;
+  color: var(--bg);
+  padding: 0.2rem;
+  padding-bottom: 0.3rem;
+  background-color: rgba(from var(--primary) r g b / 0.9);
+  border-radius: 1rem;
+  corner-shape: squircle;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateY(-2.3rem) translateX(-50%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+button.clipboard.isVisible::after {
+  opacity: 1;
+}
+
+hr {
+  border: 1px solid var(--primary);
+  margin: auto;
+  width: 5rem;
+}

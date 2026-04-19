@@ -1,0 +1,14 @@
+input[type="number"] {
+  background-color: transparent;
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.4rem 0;
+  text-align: center;
+  outline: none;
+  font-size: 1.2rem;
+  caret-color: transparent;
+}
+
+.configBar p {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,36 @@
+:root {
+  --bg: rgb(19 11 26);
+  --primary: rgb(231 175 21);
+  --selection: rgba(171 130 17 / 0.2);
+  --container: rgb(40 22 57);
+  --border: rgb(68, 36, 98);
+}
+
+::selection {
+  background-color: var(--selection);
+}
+
+* {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Jetbrains Mono";
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.25rem auto;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
