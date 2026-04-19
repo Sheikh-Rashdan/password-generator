@@ -25,7 +25,7 @@ function StrengthBar({ passwordLength, useUppercase, useNumbers, useSymbols }) {
 
     return (
         <>
-            <p>Strength: {strengthScore}</p>
+            <p>Strength: {strengthScore}/6</p>
             <ProgressBar value={strengthScore} min={0} max={6} color={barColor} />
         </>
     );
