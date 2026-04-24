@@ -32,7 +32,7 @@ function Slider({ startValue, setValue, min, max }) {
     const startX = (clampedStartValue - min) * (trackRect.width - thumbRect.width) / (max - min);
 
     setThumbX(startX);
-  }, [startValue, min, max]);
+  }, []);
 
   useLayoutEffect(() => {
     if (!thumbHeld) return;
