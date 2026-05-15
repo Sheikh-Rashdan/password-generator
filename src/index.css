@@ -34,3 +34,11 @@ body {
   justify-content: center;
   gap: 1.5rem;
 }
+
+@media (max-width: 768px) {
+  #root {
+    width: 100%;
+    max-width: 23rem;
+    margin: 0 auto;
+  }
+}

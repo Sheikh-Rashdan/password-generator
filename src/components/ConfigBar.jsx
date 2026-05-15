@@ -10,9 +10,6 @@ function ConfigBar({ passwordLength, setPasswordLength, useNumbers, setUseNumber
       <div className="column">
         <p>Length: {passwordLength}</p>
         <Slider startValue={passwordLength} setValue={setPasswordLength} min={8} max={24} />
-        {/* <input type="number" min={8} max={24} value={passwordLength}
-          onKeyDown={(e) => e.preventDefault()}
-          onInput={(e) => setPasswordLength(e.target.value)} /> */}
       </div>
 
       <hr />
@@ -21,9 +18,7 @@ function ConfigBar({ passwordLength, setPasswordLength, useNumbers, setUseNumber
         <p>Include:</p>
         <div className="row">
           <IncludeCheckbox value="Uppercase" useValue={useUppercase} setUseValue={setUseUppercase} />
-          <p>&nbsp;|&nbsp;</p>
           <IncludeCheckbox value="Numbers" useValue={useNumbers} setUseValue={setUseNumbers} />
-          <p>&nbsp;|&nbsp;</p>
           <IncludeCheckbox value="Symbols" useValue={useSymbols} setUseValue={setUseSymbols} />
         </div>
       </div>

@@ -22,6 +22,7 @@
   height: 0.4rem;
   border-radius: 100vh;
   position: relative;
+  touch-action: none;
 }
 
 .sliderThumb {
@@ -33,6 +34,7 @@
   border-radius: 100vh;
   transform: translateY(-50%);
   cursor: pointer;
+  touch-action: none;
 }
 
 .sliderThumb:hover {

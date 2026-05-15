@@ -12,3 +12,14 @@ input[type="number"] {
 .configBar p {
   font-size: 1.2rem;
 }
+
+.configBar .row {
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .configBar .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

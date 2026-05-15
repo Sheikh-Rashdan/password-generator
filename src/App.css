@@ -45,6 +45,8 @@
 .password {
   padding: 0.5rem;
   font-size: 1.6rem;
+  word-break: break-all;
+  text-align: center;
 }
 
 button {

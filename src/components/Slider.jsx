@@ -10,7 +10,6 @@ function Slider({ startValue, setValue, min, max }) {
   const [thumbX, setThumbX] = useState(0);
 
   function holdThumb(e) {
-    e.preventDefault();
     setThumbHeld(true);
   }
 
@@ -36,7 +35,15 @@ function Slider({ startValue, setValue, min, max }) {
 
   useLayoutEffect(() => {
     if (!thumbHeld) return;
-    function moveThumb(e) {
+    function moveThumbThroughMouse(e) {
+      moveThumb(e.clientX);
+    }
+
+    function moveThumbThroughTouch(e) {
+      moveThumb(e.touches[0].clientX);
+    }
+
+    function moveThumb(posX) {
 
       const track = trackRef.current;
       const thumb = thumbRef.current;
@@ -45,7 +52,7 @@ function Slider({ startValue, setValue, min, max }) {
       const trackRect = track.getBoundingClientRect();
       const thumbRect = thumb.getBoundingClientRect();
 
-      let newX = e.clientX - trackRect.left - thumbRect.width / 2;
+      let newX = posX - trackRect.left - thumbRect.width / 2;
 
       newX = Math.max(0, Math.min(newX, trackRect.width - thumbRect.width))
       setThumbX(newX);
@@ -58,12 +65,16 @@ function Slider({ startValue, setValue, min, max }) {
       setThumbHeld(false);
     }
 
-    window.addEventListener("mousemove", moveThumb);
+    window.addEventListener("mousemove", moveThumbThroughMouse);
+    window.addEventListener("touchmove", moveThumbThroughTouch)
     window.addEventListener("mouseup", releaseThumb);
+    window.addEventListener("touchend", releaseThumb)
 
     return () => {
-      window.removeEventListener("mousemove", moveThumb)
+      window.removeEventListener("mousemove", moveThumbThroughMouse)
+      window.removeEventListener("touchmove", moveThumbThroughTouch)
       window.removeEventListener("mouseup", releaseThumb)
+      window.removeEventListener("touchend", moveThumb)
     };
   }, [thumbHeld]);
 
@@ -76,6 +87,7 @@ function Slider({ startValue, setValue, min, max }) {
         <div className="sliderThumb"
           ref={thumbRef}
           onMouseDown={holdThumb}
+          onTouchStart={holdThumb}
           style={{ left: thumbX }}
         />
       </div>
